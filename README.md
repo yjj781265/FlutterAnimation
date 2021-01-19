@@ -1,6 +1,6 @@
 # flutter_animation_demo
 
-the demo app for demonstating all availiabe  flutter animation
+the demo app for demonstating all availiabe  flutter animations
 
 ## Getting Started
 
