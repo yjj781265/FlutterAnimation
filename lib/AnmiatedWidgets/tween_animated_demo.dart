@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../util.dart';
+
 class TweenAnimatedDemo extends StatefulWidget {
   @override
   _TweenAnimatedDemoState createState() => _TweenAnimatedDemoState();
@@ -7,45 +9,15 @@ class TweenAnimatedDemo extends StatefulWidget {
 
 class _TweenAnimatedDemoState extends State<TweenAnimatedDemo> {
   double _targetSize = 300;
-  Map<String, Curve> curveMap = {
-    "elasticIn": Curves.elasticIn,
-    "bounceIn": Curves.bounceIn,
-    "bounceInOut": Curves.bounceInOut,
-    "bounceOut": Curves.bounceOut,
-    'decelerate': Curves.decelerate,
-    'ease': Curves.ease,
-    'easeIn': Curves.easeIn,
-    'easeInBack': Curves.easeInBack,
-    'easeInCirc': Curves.easeInCirc,
-    'easeInExpo': Curves.easeInExpo,
-    'easeInOut': Curves.easeInOut,
-    'easeInOutBack': Curves.easeInOutBack,
-    'easeInOutCubic': Curves.easeInOutCubic,
-    'easeInOutCirc': Curves.easeInOutCirc,
-    'easeInOutExpo': Curves.easeInOutExpo,
-    'easeInOutQuad': Curves.easeInOutQuad,
-    'easeInOutQuint': Curves.easeInOutQuint,
-    'easeInSine': Curves.easeInSine,
-    'easeInQuad': Curves.easeInQuad,
-    'easeInQuint': Curves.easeInQuint,
-    'fastLinearToSlowEaseIn': Curves.fastLinearToSlowEaseIn,
-    'fastOutSlowIn': Curves.fastOutSlowIn,
-    'linear': Curves.linear,
-    'linearToEaseOut': Curves.linearToEaseOut,
-    'slowMiddle': Curves.slowMiddle,
-  };
-
   List<String> curveList = List();
-
   Curve _curve = Curves.linear;
   String currentDropDownValue;
 
   @override
   void initState() {
-    curveList = curveMap.keys.toList();
-    curveList.sort();
+    curveList = Util().getSortedKeyList();
     currentDropDownValue = curveList.first;
-    _curve = curveMap[currentDropDownValue];
+    _curve = Util().curveMap[currentDropDownValue];
     super.initState();
   }
 
@@ -64,7 +36,7 @@ class _TweenAnimatedDemoState extends State<TweenAnimatedDemo> {
             onChanged: (newValue) {
               setState(() {
                 currentDropDownValue = newValue;
-                _curve = curveMap[currentDropDownValue];
+                _curve = Util().curveMap[currentDropDownValue];
               });
             }),
         Expanded(

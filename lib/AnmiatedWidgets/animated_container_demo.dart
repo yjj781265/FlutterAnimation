@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../util.dart';
+
 class AnimatedContainerDemo extends StatefulWidget {
   @override
   _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
@@ -7,34 +9,6 @@ class AnimatedContainerDemo extends StatefulWidget {
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   bool isBigger = false;
-  Map<String, Curve> curveMap = {
-    "elasticIn": Curves.elasticIn,
-    "bounceIn": Curves.bounceIn,
-    "bounceInOut": Curves.bounceInOut,
-    "bounceOut": Curves.bounceOut,
-    'decelerate': Curves.decelerate,
-    'ease': Curves.ease,
-    'easeIn': Curves.easeIn,
-    'easeInBack': Curves.easeInBack,
-    'easeInCirc': Curves.easeInCirc,
-    'easeInExpo': Curves.easeInExpo,
-    'easeInOut': Curves.easeInOut,
-    'easeInOutBack': Curves.easeInOutBack,
-    'easeInOutCubic': Curves.easeInOutCubic,
-    'easeInOutCirc': Curves.easeInOutCirc,
-    'easeInOutExpo': Curves.easeInOutExpo,
-    'easeInOutQuad': Curves.easeInOutQuad,
-    'easeInOutQuint': Curves.easeInOutQuint,
-    'easeInSine': Curves.easeInSine,
-    'easeInQuad': Curves.easeInQuad,
-    'easeInQuint': Curves.easeInQuint,
-    'fastLinearToSlowEaseIn': Curves.fastLinearToSlowEaseIn,
-    'fastOutSlowIn': Curves.fastOutSlowIn,
-    'linear': Curves.linear,
-    'linearToEaseOut': Curves.linearToEaseOut,
-    'slowMiddle': Curves.slowMiddle,
-  };
-
   List<String> curveList = List();
 
   Curve _curve = Curves.linear;
@@ -43,10 +17,9 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   @override
   void initState() {
     super.initState();
-    curveList = curveMap.keys.toList();
-    curveList.sort();
+    curveList = Util().getSortedKeyList();
     currentDropDownValue = curveList.first;
-    _curve = curveMap[currentDropDownValue];
+    _curve = Util().curveMap[currentDropDownValue];
   }
 
   @override
@@ -64,7 +37,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
             onChanged: (newValue) {
               setState(() {
                 currentDropDownValue = newValue;
-                _curve = curveMap[currentDropDownValue];
+                _curve = Util().curveMap[currentDropDownValue];
               });
             }),
         Expanded(
