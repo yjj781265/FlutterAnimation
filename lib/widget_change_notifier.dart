@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_animation_demo/AnmiatedWidgets/animated_container_demo.dart';
+import 'package:flutter_animation_demo/AnmiatedWidgets/animated_position_demo.dart';
 import 'package:flutter_animation_demo/AnmiatedWidgets/animated_switcher_demo.dart';
 import 'package:flutter_animation_demo/AnmiatedWidgets/tween_animated_demo.dart';
 
@@ -9,7 +10,8 @@ class WidgetChangeNotifier extends ChangeNotifier {
   final List<MyAnimatedWidget> widgets = [
     MyAnimatedWidget("AnimatedContainer", AnimatedContainerDemo()),
     MyAnimatedWidget("TwinAnimatedWidget", TweenAnimatedDemo()),
-    MyAnimatedWidget("AnimatedSwitcher", AnimatedSwitcherDemo())
+    MyAnimatedWidget("AnimatedSwitcher", AnimatedSwitcherDemo()),
+    MyAnimatedWidget("AnimatedPositioned", AnimatedPositionDemo())
   ];
 
   MyAnimatedWidget currentAnimatedWidget;
