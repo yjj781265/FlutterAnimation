@@ -17,6 +17,8 @@ class WidgetChangeNotifier extends ChangeNotifier {
   MyAnimatedWidget currentAnimatedWidget;
 
   WidgetChangeNotifier() {
+    //sort list by name in alphabetical order
+    widgets.sort((a, b) => a.name.compareTo(b.name));
     currentAnimatedWidget = widgets.first;
   }
 
