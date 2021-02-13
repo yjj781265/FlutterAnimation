@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_animation_demo/AnmiatedWidgets/animated_container_demo.dart';
-import 'package:flutter_animation_demo/AnmiatedWidgets/animated_position_demo.dart';
-import 'package:flutter_animation_demo/AnmiatedWidgets/animated_switcher_demo.dart';
-import 'package:flutter_animation_demo/AnmiatedWidgets/tween_animated_demo.dart';
+import 'package:flutter_animation_demo/AnimatedWidgets/animated_container_demo.dart';
+import 'package:flutter_animation_demo/AnimatedWidgets/animated_position_demo.dart';
+import 'package:flutter_animation_demo/AnimatedWidgets/animated_switcher_demo.dart';
+import 'package:flutter_animation_demo/AnimatedWidgets/tween_animated_demo.dart';
 
+import 'AnimatedWidgets/animated_align_demo.dart';
 import 'my_animated_widget.dart';
 
 class WidgetChangeNotifier extends ChangeNotifier {
@@ -11,7 +12,8 @@ class WidgetChangeNotifier extends ChangeNotifier {
     MyAnimatedWidget("AnimatedContainer", AnimatedContainerDemo()),
     MyAnimatedWidget("TwinAnimatedWidget", TweenAnimatedDemo()),
     MyAnimatedWidget("AnimatedSwitcher", AnimatedSwitcherDemo()),
-    MyAnimatedWidget("AnimatedPositioned", AnimatedPositionDemo())
+    MyAnimatedWidget("AnimatedPositioned", AnimatedPositionDemo()),
+    MyAnimatedWidget("AnimatedAlign", AnimatedAlignDemo()),
   ];
 
   MyAnimatedWidget currentAnimatedWidget;
