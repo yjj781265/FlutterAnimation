@@ -11,7 +11,6 @@ class _AnimatedCrossFadeDemoState extends State<AnimatedCrossFadeDemo> {
   bool _isFaded = true;
   String _firstCurveDropDownValue;
   String _secondCurveDropDownValue;
-  String _sizeCurveDropDownValue;
   List<String> _curveList = List();
   Curve _firstCurve = Curves.linear;
   Curve _secondCurve = Curves.linear;
@@ -21,7 +20,6 @@ class _AnimatedCrossFadeDemoState extends State<AnimatedCrossFadeDemo> {
     _curveList = Util().getSortedKeyList();
     _firstCurveDropDownValue = _curveList.first;
     _secondCurveDropDownValue = _curveList.first;
-    _sizeCurveDropDownValue = _curveList.first;
     _firstCurve = Util().curveMap[_firstCurveDropDownValue];
     _secondCurve = Util().curveMap[_secondCurveDropDownValue];
     super.initState();
