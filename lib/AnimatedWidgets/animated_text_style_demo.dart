@@ -49,7 +49,7 @@ class _AnimatedTextStyleDemoState extends State<AnimatedTextStyleDemo> {
               ? TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.blue,
-                  fontSize: 40,
+                  fontSize: 30,
                 )
               : TextStyle(
                   color: Colors.black,
