@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 import '../util.dart';
 
-class AnimatedContainerDemo extends StatefulWidget {
+class AnimatedOpacityDemo extends StatefulWidget {
   @override
-  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
+  _AnimatedOpacityDemoState createState() => _AnimatedOpacityDemoState();
 }
 
-class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
-  bool isBigger = false;
+class _AnimatedOpacityDemoState extends State<AnimatedOpacityDemo> {
+  bool isAnimating = false;
   List<String> curveList = List();
   Curve _curve = Curves.linear;
   String currentDropDownValue;
 
   @override
   void initState() {
-    super.initState();
     curveList = Util().getSortedKeyList();
     currentDropDownValue = curveList.first;
     _curve = Util().curveMap[currentDropDownValue];
+    super.initState();
   }
 
   @override
@@ -42,12 +42,13 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
         SizedBox(
           height: 16,
         ),
-        AnimatedContainer(
+        AnimatedOpacity(
+          opacity: isAnimating ? 1.0 : 0.2,
           curve: _curve,
           duration: Duration(seconds: 3),
-          child: FlutterLogo(),
-          width: isBigger ? 300 : 100,
-          height: isBigger ? 300 : 100,
+          child: FlutterLogo(
+            size: 100,
+          ),
         ),
         SizedBox(
           height: 16,
@@ -55,7 +56,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
         FlatButton.icon(
             onPressed: () {
               setState(() {
-                isBigger = !isBigger;
+                isAnimating = !isAnimating;
               });
             },
             icon: Icon(

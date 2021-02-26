@@ -39,6 +39,7 @@ class _AnimatedPaddingDemoState extends State<AnimatedPaddingDemo> {
                 _curve = Util().curveMap[currentDropDownValue];
               });
             }),
+        SizedBox(height: 16,),
         Container(
           color: Colors.greenAccent,
           child: AnimatedPadding(

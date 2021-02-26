@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_container_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_crossfade_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_list_demo.dart';
+import 'package:flutter_animation_demo/AnimatedWidgets/animated_opacity_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_padding_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_position_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_switcher_demo.dart';
@@ -24,6 +25,7 @@ class WidgetChangeNotifier extends ChangeNotifier {
     MyAnimatedWidget("AnimatedList", AnimatedListDemo()),
     MyAnimatedWidget('AnimatedIcon', AnimatedIconDemo()),
     MyAnimatedWidget('AnimatedPadding', AnimatedPaddingDemo()),
+    MyAnimatedWidget('AnimatedOpacity', AnimatedOpacityDemo()),
   ];
 
   MyAnimatedWidget currentAnimatedWidget;

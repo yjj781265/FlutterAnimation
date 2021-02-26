@@ -71,4 +71,10 @@ class _AnimatedIconDemoState extends State<AnimatedIconDemo>
       ],
     );
   }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 }
