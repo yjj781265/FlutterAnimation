@@ -8,6 +8,7 @@ import 'package:flutter_animation_demo/AnimatedWidgets/animated_text_style_demo.
 import 'package:flutter_animation_demo/AnimatedWidgets/tween_animated_demo.dart';
 
 import 'AnimatedWidgets/animated_align_demo.dart';
+import 'AnimatedWidgets/animated_icon_demo.dart';
 import 'my_animated_widget.dart';
 
 class WidgetChangeNotifier extends ChangeNotifier {
@@ -19,7 +20,8 @@ class WidgetChangeNotifier extends ChangeNotifier {
     MyAnimatedWidget("AnimatedAlign", AnimatedAlignDemo()),
     MyAnimatedWidget("AnimatedCrossFade", AnimatedCrossFadeDemo()),
     MyAnimatedWidget("AnimatedDefaultTextStyle", AnimatedTextStyleDemo()),
-    MyAnimatedWidget("AnimatedList", AnimatedListDemo())
+    MyAnimatedWidget("AnimatedList", AnimatedListDemo()),
+    MyAnimatedWidget('AnimatedIcon', AnimatedIconDemo()),
   ];
 
   MyAnimatedWidget currentAnimatedWidget;
