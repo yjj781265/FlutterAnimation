@@ -50,6 +50,7 @@ flutter:
   assets:
     - asset/troll.png
     - asset/heart.png
+    - asset/hero.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -7,6 +7,7 @@ import 'package:flutter_animation_demo/AnimatedWidgets/animated_padding_demo.dar
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_position_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_switcher_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_text_style_demo.dart';
+import 'package:flutter_animation_demo/AnimatedWidgets/hero_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/tween_animated_demo.dart';
 
 import 'AnimatedWidgets/animated_align_demo.dart';
@@ -26,6 +27,7 @@ class WidgetChangeNotifier extends ChangeNotifier {
     MyAnimatedWidget('AnimatedIcon', AnimatedIconDemo()),
     MyAnimatedWidget('AnimatedPadding', AnimatedPaddingDemo()),
     MyAnimatedWidget('AnimatedOpacity', AnimatedOpacityDemo()),
+    MyAnimatedWidget('Hero', HeroDemo())
   ];
 
   MyAnimatedWidget currentAnimatedWidget;

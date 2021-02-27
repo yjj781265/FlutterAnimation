@@ -13,6 +13,12 @@ class _AnimatedListDemoState extends State<AnimatedListDemo> {
   Random random = Random();
 
   @override
+  void initState() {
+    _items.add(Item(generateRandomColor()));
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
