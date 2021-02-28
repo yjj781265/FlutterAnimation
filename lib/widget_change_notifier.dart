@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_container_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_crossfade_demo.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/animated_list_demo.dart';
@@ -16,6 +17,11 @@ import 'my_animated_widget.dart';
 
 class WidgetChangeNotifier extends ChangeNotifier {
   final List<MyAnimatedWidget> widgets = [
+    MyAnimatedWidget(
+        "",
+        DrawerHeader(
+          child: FlutterLogo(),
+        )),
     MyAnimatedWidget("AnimatedContainer", AnimatedContainerDemo()),
     MyAnimatedWidget("TwinAnimatedWidget", TweenAnimatedDemo()),
     MyAnimatedWidget("AnimatedSwitcher", AnimatedSwitcherDemo()),
@@ -35,7 +41,7 @@ class WidgetChangeNotifier extends ChangeNotifier {
   WidgetChangeNotifier() {
     //sort list by name in alphabetical order
     widgets.sort((a, b) => a.name.compareTo(b.name));
-    currentAnimatedWidget = widgets.first;
+    currentAnimatedWidget = widgets[1];
   }
 
   updateCurrentWidget(MyAnimatedWidget widget) {

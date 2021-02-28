@@ -76,7 +76,7 @@ class _AnimatedAlignDemoState extends State<AnimatedAlignDemo> {
                 alignment: isAligned ? Alignment.center : Alignment.topLeft,
               ),
               Padding(
-                padding: const EdgeInsets.all(64),
+                padding: const EdgeInsets.all(16),
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: FlatButton.icon(

@@ -53,6 +53,9 @@ class MyHomePage extends StatelessWidget {
           child: ListView.builder(
         itemBuilder: (context, index) {
           MyAnimatedWidget mWidget = widgetChangeNotifier.widgets[index];
+          if (index == 0) {
+            return mWidget.widget;
+          }
           return ListTile(
             title: Text(mWidget.name),
             onTap: () {

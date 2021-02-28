@@ -27,78 +27,81 @@ class _AnimatedCrossFadeDemoState extends State<AnimatedCrossFadeDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("First Curve:"),
-            SizedBox(width: 8),
-            DropdownButton(
-                value: _firstCurveDropDownValue,
-                items: _curveList
-                    .map((value) => DropdownMenuItem<String>(
-                          child: Text(value),
-                          value: value,
-                        ))
-                    .toList(),
-                onChanged: (newValue) {
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("First Curve:"),
+              SizedBox(width: 8),
+              DropdownButton(
+                  value: _firstCurveDropDownValue,
+                  items: _curveList
+                      .map((value) => DropdownMenuItem<String>(
+                            child: Text(value),
+                            value: value,
+                          ))
+                      .toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _firstCurveDropDownValue = newValue;
+                      _firstCurve = Util().curveMap[_firstCurveDropDownValue];
+                    });
+                  }),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Second Curve:"),
+              SizedBox(width: 8),
+              DropdownButton(
+                  value: _secondCurveDropDownValue,
+                  items: _curveList
+                      .map((value) => DropdownMenuItem<String>(
+                            child: Text(value),
+                            value: value,
+                          ))
+                      .toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _secondCurveDropDownValue = newValue;
+                      _secondCurve = Util().curveMap[_secondCurveDropDownValue];
+                    });
+                  }),
+            ],
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          AnimatedCrossFade(
+              firstChild: FirstChild(),
+              secondChild: SecondChild(),
+              firstCurve: _firstCurve,
+              secondCurve: _secondCurve,
+              crossFadeState: _isFaded
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: Duration(seconds: 3)),
+          Padding(
+            padding: const EdgeInsets.all(64),
+            child: FlatButton.icon(
+                onPressed: () {
                   setState(() {
-                    _firstCurveDropDownValue = newValue;
-                    _firstCurve = Util().curveMap[_firstCurveDropDownValue];
+                    _isFaded = !_isFaded;
                   });
-                }),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Second Curve:"),
-            SizedBox(width: 8),
-            DropdownButton(
-                value: _secondCurveDropDownValue,
-                items: _curveList
-                    .map((value) => DropdownMenuItem<String>(
-                          child: Text(value),
-                          value: value,
-                        ))
-                    .toList(),
-                onChanged: (newValue) {
-                  setState(() {
-                    _secondCurveDropDownValue = newValue;
-                    _secondCurve = Util().curveMap[_secondCurveDropDownValue];
-                  });
-                }),
-          ],
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        AnimatedCrossFade(
-            firstChild: FirstChild(),
-            secondChild: SecondChild(),
-            firstCurve: _firstCurve,
-            secondCurve: _secondCurve,
-            crossFadeState:
-                _isFaded ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-            duration: Duration(seconds: 3)),
-        Padding(
-          padding: const EdgeInsets.all(64),
-          child: FlatButton.icon(
-              onPressed: () {
-                setState(() {
-                  _isFaded = !_isFaded;
-                });
-              },
-              icon: Icon(
-                Icons.play_circle_filled,
-                size: 30,
-                color: Colors.greenAccent,
-              ),
-              label: Text("Click To Play")),
-        )
-      ],
+                },
+                icon: Icon(
+                  Icons.play_circle_filled,
+                  size: 30,
+                  color: Colors.greenAccent,
+                ),
+                label: Text("Click To Play")),
+          )
+        ],
+      ),
     );
   }
 }
