@@ -21,19 +21,31 @@ class WidgetChangeNotifier extends ChangeNotifier {
         "",
         DrawerHeader(
           child: FlutterLogo(),
-        )),
-    MyAnimatedWidget("AnimatedContainer", AnimatedContainerDemo()),
-    MyAnimatedWidget("TwinAnimatedWidget", TweenAnimatedDemo()),
-    MyAnimatedWidget("AnimatedSwitcher", AnimatedSwitcherDemo()),
-    MyAnimatedWidget("AnimatedPositioned", AnimatedPositionDemo()),
-    MyAnimatedWidget("AnimatedAlign", AnimatedAlignDemo()),
-    MyAnimatedWidget("AnimatedCrossFade", AnimatedCrossFadeDemo()),
-    MyAnimatedWidget("AnimatedDefaultTextStyle", AnimatedTextStyleDemo()),
-    MyAnimatedWidget("AnimatedList", AnimatedListDemo()),
-    MyAnimatedWidget('AnimatedIcon', AnimatedIconDemo()),
-    MyAnimatedWidget('AnimatedPadding', AnimatedPaddingDemo()),
-    MyAnimatedWidget('AnimatedOpacity', AnimatedOpacityDemo()),
-    MyAnimatedWidget('Hero', HeroDemo())
+        ),
+        null),
+    MyAnimatedWidget("AnimatedContainer", AnimatedContainerDemo(),
+        'animated_container_demo.dart'),
+    MyAnimatedWidget(
+        "TwinAnimatedWidget", TweenAnimatedDemo(), 'tween_animated_demo.dart'),
+    MyAnimatedWidget("AnimatedSwitcher", AnimatedSwitcherDemo(),
+        'animated_switcher_demo.dart'),
+    MyAnimatedWidget("AnimatedPositioned", AnimatedPositionDemo(),
+        'animated_position_demo.dart'),
+    MyAnimatedWidget(
+        "AnimatedAlign", AnimatedAlignDemo(), 'animated_align_demo.dart'),
+    MyAnimatedWidget("AnimatedCrossFade", AnimatedCrossFadeDemo(),
+        'animated_crossfade_demo.dart'),
+    MyAnimatedWidget("AnimatedDefaultTextStyle", AnimatedTextStyleDemo(),
+        'animated_text_style_demo.dart'),
+    MyAnimatedWidget(
+        "AnimatedList", AnimatedListDemo(), 'animated_list_demo.dart'),
+    MyAnimatedWidget(
+        'AnimatedIcon', AnimatedIconDemo(), 'animated_icon_demo.dart'),
+    MyAnimatedWidget(
+        'AnimatedPadding', AnimatedPaddingDemo(), 'animated_padding_demo.dart'),
+    MyAnimatedWidget(
+        'AnimatedOpacity', AnimatedOpacityDemo(), 'animated_opacity_demo.dart'),
+    MyAnimatedWidget('Hero', HeroDemo(), 'hero_demo.dart')
   ];
 
   MyAnimatedWidget currentAnimatedWidget;

@@ -75,23 +75,20 @@ class _AnimatedAlignDemoState extends State<AnimatedAlignDemo> {
                 ),
                 alignment: isAligned ? Alignment.center : Alignment.topLeft,
               ),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: FlatButton.icon(
-                      onPressed: () {
-                        setState(() {
-                          isAligned = !isAligned;
-                        });
-                      },
-                      icon: Icon(
-                        Icons.play_circle_filled,
-                        size: 30,
-                        color: Colors.greenAccent,
-                      ),
-                      label: Text("Click To Play")),
-                ),
+              Align(
+                alignment: Alignment.center,
+                child: FlatButton.icon(
+                    onPressed: () {
+                      setState(() {
+                        isAligned = !isAligned;
+                      });
+                    },
+                    icon: Icon(
+                      Icons.play_circle_filled,
+                      size: 30,
+                      color: Colors.greenAccent,
+                    ),
+                    label: Text("Click To Play")),
               )
             ],
           ),

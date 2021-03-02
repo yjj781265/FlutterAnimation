@@ -8,7 +8,7 @@ class HeroDemo extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GestureDetector(
+        InkWell(
           onTap: () {
             Navigator.push(context,
                 CupertinoPageRoute(builder: (context) => HeroExpandedPage()));
@@ -24,7 +24,7 @@ class HeroDemo extends StatelessWidget {
         SizedBox(
           height: 8,
         ),
-        Text("Click Me ^")
+        Text("Click Me ↑️")
       ],
     );
   }

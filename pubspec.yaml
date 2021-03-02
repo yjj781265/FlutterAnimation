@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
     
   provider: ^4.3.3
+  widget_with_codeview: '1.0.5'
 
 
 
@@ -58,6 +59,7 @@ flutter:
     - asset/troll.png
     - asset/heart.png
     - asset/hero.png
+    - lib/AnimatedWidgets/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
