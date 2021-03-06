@@ -48,6 +48,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   BannerAd myBanner;
+  AdWidget adWidget;
 
   @override
   void didChangeDependencies() {
@@ -59,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
           request: AdRequest(),
           listener: AdHelper.listener)
         ..load();
+      adWidget = AdWidget(ad: myBanner);
       print('ad is loaded');
     });
   }
@@ -89,16 +91,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Expanded(child: widgetChangeNotifier.currentAnimatedWidget.widget),
-            if (myBanner == null)
+            if (adWidget == null)
               SizedBox(
                 height: 50,
               )
             else
               Container(
                 height: 50,
-                child: AdWidget(
-                  ad: myBanner,
-                ),
+                child: adWidget,
               )
           ],
         ),
