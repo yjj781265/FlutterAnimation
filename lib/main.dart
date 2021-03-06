@@ -47,15 +47,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final BannerAd myBanner = BannerAd(
-      adUnitId: AdHelper.bannerAdUnitId,
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: AdHelper.listener);
+  BannerAd myBanner;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setState(() {
+      myBanner = BannerAd(
+          adUnitId: AdHelper.bannerAdUnitId,
+          size: AdSize.banner,
+          request: AdRequest(),
+          listener: AdHelper.listener)
+        ..load();
+      print('ad is loaded');
+    });
   }
 
   @override
@@ -84,14 +89,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Expanded(child: widgetChangeNotifier.currentAnimatedWidget.widget),
-            Container(
-              color: Colors.grey[200],
-              height: 50,
-              width: myBanner.size.width.toDouble(),
-              child: AdWidget(
-                ad: myBanner..load(),
-              ),
-            )
+            if (myBanner == null)
+              SizedBox(
+                height: 50,
+              )
+            else
+              Container(
+                height: 50,
+                child: AdWidget(
+                  ad: myBanner,
+                ),
+              )
           ],
         ),
       ),
@@ -116,5 +124,11 @@ class _MyHomePageState extends State<MyHomePage> {
         itemCount: widgetChangeNotifier.widgets.length,
       )),
     );
+  }
+
+  @override
+  void dispose() {
+    myBanner.dispose();
+    super.dispose();
   }
 }
