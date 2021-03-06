@@ -51,8 +51,8 @@ class _AnimatedAlignDemoState extends State<AnimatedAlignDemo> {
             children: [
               Align(
                 child: Container(
-                  width: 200,
-                  height: 200,
+                  width: 150,
+                  height: 150,
                   decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Colors.transparent,
@@ -66,8 +66,8 @@ class _AnimatedAlignDemoState extends State<AnimatedAlignDemo> {
                 duration: Duration(seconds: 3),
                 child: Container(
                   margin: EdgeInsets.all(8),
-                  width: 190,
-                  height: 190,
+                  width: 100,
+                  height: 100,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     color: Colors.blue,

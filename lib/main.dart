@@ -2,13 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animation_demo/AnimatedWidgets/source_code_view.dart';
+import 'package:flutter_animation_demo/ad_helper.dart';
 import 'package:flutter_animation_demo/widget_change_notifier.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
 import 'my_animated_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -34,10 +37,26 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   final String title;
 
   MyHomePage({Key key, this.title}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final BannerAd myBanner = BannerAd(
+      adUnitId: AdHelper.bannerAdUnitId,
+      size: AdSize.banner,
+      request: AdRequest(),
+      listener: AdHelper.listener);
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +80,21 @@ class MyHomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Center(child: widgetChangeNotifier.currentAnimatedWidget.widget),
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(child: widgetChangeNotifier.currentAnimatedWidget.widget),
+            Container(
+              color: Colors.grey[200],
+              height: 50,
+              width: myBanner.size.width.toDouble(),
+              child: AdWidget(
+                ad: myBanner..load(),
+              ),
+            )
+          ],
+        ),
+      ),
       drawer: Drawer(
           // Add a ListView to the drawer. This ensures the user can scroll
           // through the options in the drawer if there isn't enough vertical
