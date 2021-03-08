@@ -3,7 +3,7 @@
 the demo app for demonstating all availiabe flutter animations
 ![Flutter_Animation_Demo_FG](https://user-images.githubusercontent.com/22083254/110382237-9a421000-8028-11eb-9fd9-f67138063bd1.png)
 
-![Screenshot_1615233110](https://user-images.githubusercontent.com/22083254/110382214-93b39880-8028-11eb-8a5a-5ecf7efd0b4f.png width="400" height="790")
+![Screenshot_1615233110](https://user-images.githubusercontent.com/22083254/110382214-93b39880-8028-11eb-8a5a-5ecf7efd0b4f.png | width=100)
 ![Screenshot_1615233122](https://user-images.githubusercontent.com/22083254/110382217-93b39880-8028-11eb-8ee1-af946a322653.png)
 ![Screenshot_1615233126](https://user-images.githubusercontent.com/22083254/110382218-944c2f00-8028-11eb-8058-cebd89d8754e.png)
 ![Screenshot_1615233134](https://user-images.githubusercontent.com/22083254/110382219-944c2f00-8028-11eb-8dd4-d6b1d33a38bd.png)
