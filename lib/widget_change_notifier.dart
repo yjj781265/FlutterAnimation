@@ -45,7 +45,7 @@ class WidgetChangeNotifier extends ChangeNotifier {
         'AnimatedPadding', AnimatedPaddingDemo(), 'animated_padding_demo.dart'),
     MyAnimatedWidget(
         'AnimatedOpacity', AnimatedOpacityDemo(), 'animated_opacity_demo.dart'),
-    MyAnimatedWidget('Hero', HeroDemo(), 'hero_demo.dart')
+    MyAnimatedWidget('Hero', HeroDemo(), 'hero_demo.dart'),
   ];
 
   MyAnimatedWidget currentAnimatedWidget;
