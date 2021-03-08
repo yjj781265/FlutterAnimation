@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primaryColor: Colors.greenAccent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ChangeNotifierProvider(
@@ -97,9 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             else
               Container(
+                margin: EdgeInsets.only(bottom: 8),
                 height: 50,
                 child: adWidget,
-              )
+              ),
           ],
         ),
       ),
