@@ -1,5 +1,5 @@
 # flutter_animation_demo
-The demo app for demonstating all availiabe flutter animations
+The demo app for helping developers to understand all implict flutter animations
 
 <img src ="https://user-images.githubusercontent.com/22083254/110382237-9a421000-8028-11eb-9fd9-f67138063bd1.png" width="800" height="400">
 
