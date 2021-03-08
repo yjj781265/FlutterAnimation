@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-7007793257643098~8472349756</string>
+	<string>ca-app-pub-7007793257643098~3218123266</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
